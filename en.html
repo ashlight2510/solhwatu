@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>화투 솔리테어 | Hwatu Solitaire</title>
+  <title>Hwatu Solitaire | 화투 솔리테어</title>
 
   <!-- OG -->
   <meta property="og:title" content="Hwatu Solitaire" />
-  <meta property="og:description" content="트럼프 대신 화투로 즐기는 카드 쌓기 게임" />
+  <meta property="og:description" content="A card stacking game using Hwatu cards instead of playing cards" />
   <meta property="og:image" content="https://dummyimage.com/1200x630/0b1220/ffffff&text=Hwatu+Solitaire" />
 
   <!-- Google AdSense -->
@@ -316,25 +316,25 @@
 
 <body>
 <header>
-  <h1>🎴 화투 솔리테어</h1>
+  <h1>🎴 Hwatu Solitaire</h1>
   <p>
-    <b>12→1</b> 내림차순 + <b>색 교차</b> + <b>아이콘 연속 금지</b>.<br/>
-    모바일은 <b>탭(선택) → 탭(놓기)</b>도 지원합니다.
+    <b>12→1</b> descending + <b>color alternate</b> + <b>no consecutive icons</b>.<br/>
+    Mobile also supports <b>tap (select) → tap (place)</b>.
   </p>
 </header>
 
 <main>
   <div class="topbar">
-    <div class="pill">🎯 목표: <b>모든 카드를 기지(4칸)로 구조</b></div>
+    <div class="pill">🎯 Goal: <b>Move all cards to foundation (4 piles)</b></div>
     <div class="controls">
-      <button class="secondary" id="hintBtn">힌트</button>
-      <button class="secondary" id="undoBtn">되돌리기</button>
-      <button id="newBtn">새 게임</button>
-      <a href="en.html" style="text-decoration:none;">
-        <button class="secondary" type="button">🇺🇸 English</button>
+      <button class="secondary" id="hintBtn">Hint</button>
+      <button class="secondary" id="undoBtn">Undo</button>
+      <button id="newBtn">New Game</button>
+      <a href="index.html" style="text-decoration:none;">
+        <button class="secondary" type="button">🇰🇷 한국어</button>
       </a>
       <a href="https://funnyfunny.cloud" target="_blank" rel="noopener" style="text-decoration:none;">
-        <button class="secondary" type="button">다른 서비스 보기</button>
+        <button class="secondary" type="button">View Other Services</button>
       </a>
     </div>
   </div>
@@ -343,22 +343,22 @@
     <div class="row1">
       <div class="leftStack">
         <div class="pile" id="stockPile" data-pile="stock">
-          <div class="pileHint">덱<br/>탭</div>
+          <div class="pileHint">Deck<br/>Tap</div>
         </div>
         <div class="pile" id="wastePile" data-pile="waste">
-          <div class="pileHint">버린 카드</div>
+          <div class="pileHint">Discard</div>
         </div>
       </div>
 
-      <div class="rightFoundation" aria-label="기지">
-        <div class="pile" data-pile="foundation" data-index="0"><div class="pileHint">기지 1<br/>12부터</div></div>
-        <div class="pile" data-pile="foundation" data-index="1"><div class="pileHint">기지 2<br/>12부터</div></div>
-        <div class="pile" data-pile="foundation" data-index="2"><div class="pileHint">기지 3<br/>12부터</div></div>
-        <div class="pile" data-pile="foundation" data-index="3"><div class="pileHint">기지 4<br/>12부터</div></div>
+      <div class="rightFoundation" aria-label="Foundation">
+        <div class="pile" data-pile="foundation" data-index="0"><div class="pileHint">Foundation 1<br/>Start from 12</div></div>
+        <div class="pile" data-pile="foundation" data-index="1"><div class="pileHint">Foundation 2<br/>Start from 12</div></div>
+        <div class="pile" data-pile="foundation" data-index="2"><div class="pileHint">Foundation 3<br/>Start from 12</div></div>
+        <div class="pile" data-pile="foundation" data-index="3"><div class="pileHint">Foundation 4<br/>Start from 12</div></div>
       </div>
     </div>
 
-    <div class="tableau" id="tableau" aria-label="테이블">
+    <div class="tableau" id="tableau" aria-label="Tableau">
       <!-- columns injected -->
     </div>
   </div>
@@ -411,18 +411,18 @@ function shuffle(arr){
 
 /* ---------- Month meta (icon) ---------- */
 const monthMeta = [
-  {m:1,  icon:'🎍', name:'1월'},
-  {m:2,  icon:'🌸', name:'2월'},
-  {m:3,  icon:'🌸', name:'3월'},
-  {m:4,  icon:'🍇', name:'4월'},
-  {m:5,  icon:'🌿', name:'5월'},
-  {m:6,  icon:'🌺', name:'6월'},
-  {m:7,  icon:'🍃', name:'7월'},
-  {m:8,  icon:'🌕', name:'8월'},
-  {m:9,  icon:'🌼', name:'9월'},
-  {m:10, icon:'🍁', name:'10월'},
-  {m:11, icon:'🌲', name:'11월'},
-  {m:12, icon:'🌧️', name:'12월'}
+  {m:1,  icon:'🎍', name:'January'},
+  {m:2,  icon:'🌸', name:'February'},
+  {m:3,  icon:'🌸', name:'March'},
+  {m:4,  icon:'🍇', name:'April'},
+  {m:5,  icon:'🌿', name:'May'},
+  {m:6,  icon:'🌺', name:'June'},
+  {m:7,  icon:'🍃', name:'July'},
+  {m:8,  icon:'🌕', name:'August'},
+  {m:9,  icon:'🌼', name:'September'},
+  {m:10, icon:'🍁', name:'October'},
+  {m:11, icon:'🌲', name:'November'},
+  {m:12, icon:'🌧️', name:'December'}
 ];
 const metaByMonth = Object.fromEntries(monthMeta.map(x=>[x.m, x]));
 
@@ -531,7 +531,7 @@ function newGame(){
     foundation: [[],[],[],[]]
   };
   renderAll();
-  toast('새 게임 시작!');
+  toast('New game started!');
 }
 
 /* ---------- Rendering ---------- */
@@ -560,7 +560,7 @@ function createCardEl(card){
     el.appendChild(label);
 
     const img = document.createElement('img');
-    img.alt = `화투 ${card.month}월`;
+    img.alt = `Hwatu ${monthMeta[card.month-1].name}`;
     img.src = card.img;
     img.onerror = ()=>{ img.style.display='none'; };
     el.appendChild(img);
@@ -622,9 +622,9 @@ function renderAll(){
 
 function updateHintText(){
   const stockHint = $('#stockPile .pileHint');
-  if(stockHint) stockHint.innerHTML = `덱<br/>탭<br/><span style="opacity:.7">${state.stock.length}장</span>`;
+  if(stockHint) stockHint.innerHTML = `Deck<br/>Tap<br/><span style="opacity:.7">${state.stock.length} cards</span>`;
   const wasteHint = $('#wastePile .pileHint');
-  if(wasteHint && state.waste.length===0) wasteHint.innerHTML = '버린 카드';
+  if(wasteHint && state.waste.length===0) wasteHint.innerHTML = 'Discard';
 }
 
 /* ---------- Stock tap ---------- */
@@ -632,7 +632,7 @@ $('#stockPile').addEventListener('click', ()=>{
   if(state.stock.length === 0){
     // recycle waste back to stock
     if(state.waste.length === 0){
-      toast('더 뽑을 카드가 없어요');
+      toast('No more cards to draw');
       return;
     }
     pushUndo();
@@ -640,7 +640,7 @@ $('#stockPile').addEventListener('click', ()=>{
     const recycled = state.waste.splice(0).reverse();
     recycled.forEach(c=>c.faceUp=false);
     state.stock = recycled;
-    toast('버린 카드를 덱으로 되돌렸어요');
+    toast('Discarded cards returned to deck');
     renderAll();
     return;
   }
@@ -829,7 +829,7 @@ function attemptMoveSelectedTo(to){
   }
 
   const ok = attemptMove(from, fromPos, count, to);
-  if(!ok) toast('놓을 수 없어요 (12→1, 색 교차, 아이콘 연속 금지)');
+  if(!ok) toast("Can't place here (12→1, color alternate, no consecutive icons)");
   return ok;
 }
 
@@ -969,7 +969,7 @@ function onCardPointerDown(e, cardId){
     if(dragLayer.contains(ghost)) dragLayer.removeChild(ghost);
 
     const ok = attemptMove(dragging.from, dragging.fromPos, dragging.movingCount, to);
-    if(!ok) toast('놓을 수 없어요 (12→1, 색 교차, 아이콘 연속 금지)');
+    if(!ok) toast("Can't place here (12→1, color alternate, no consecutive icons)");
     dragging = null;
   }
 
@@ -1047,25 +1047,25 @@ function findAnyMove(){
 $('#hintBtn').addEventListener('click', ()=>{
   const mv = findAnyMove();
   if(!mv){
-    toast('가능한 이동이 없어요. 덱을 탭하거나 새 게임!');
+    toast('No moves available. Tap deck or start new game!');
     return;
   }
   const {s, t} = mv;
-  const fromText = s.from.type==='tableau' ? `테이블 ${s.from.index+1}열` : '버린 카드';
-  const toText = t.type==='tableau' ? `테이블 ${t.index+1}열` : `기지 ${t.index+1}`;
-  toast(`힌트: ${fromText} → ${toText}`);
+  const fromText = s.from.type==='tableau' ? `Tableau column ${s.from.index+1}` : 'Discard';
+  const toText = t.type==='tableau' ? `Tableau column ${t.index+1}` : `Foundation ${t.index+1}`;
+  toast(`Hint: ${fromText} → ${toText}`);
 });
 
 /* ---------- Undo ---------- */
 $('#undoBtn').addEventListener('click', ()=>{
   if(undoStack.length === 0){
-    toast('되돌릴 기록이 없어요');
+    toast('No history to undo');
     return;
   }
   state = undoStack.pop();
   clearSelection();
   renderAll();
-  toast('되돌렸어요');
+    toast('Undone');
 });
 
 /* ---------- New ---------- */
@@ -1091,7 +1091,7 @@ $$('.rightFoundation .pile').forEach((pEl, idx)=>{
 function checkWin(){
   const totalInFound = state.foundation.reduce((a,p)=>a+p.length, 0);
   if(totalInFound === 48){
-    toast('🎉 클리어! 모든 카드를 구조했어요');
+    toast('🎉 Clear! All cards rescued');
   }
 }
 
